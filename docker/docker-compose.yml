@@ -4,9 +4,9 @@ services:
     privileged: true
     volumes:
       - /dev:/dev
-      - /home/greg/printer-data/kp3s-1/config:/opt/printer_data/config
-      - /home/greg/printer-data/kp3s-1/run:/opt/printer_data/run
-      - /home/greg/printer-data/kp3s-1/gcode:/opt/printer_data/gcodes
+      - ../data/kp3s-1/config:/opt/printer_data/config
+      - ../data/kp3s-1/run:/opt/printer_data/run
+      - ../data/kp3s-1/gcode:/opt/printer_data/gcodes
 
   moonraker-kp3s-1:
     image: mkuf/moonraker:latest
@@ -15,19 +15,19 @@ services:
     volumes:
       - /dev/null:/opt/klipper/config/null
       - /dev/null:/opt/klipper/docs/null
-      - /home/greg/printer-data/kp3s-1/config:/opt/printer_data/config
-      - /home/greg/printer-data/kp3s-1/moonraker-db:/opt/printer_data/database
-      - /home/greg/printer-data/kp3s-1/run:/opt/printer_data/run
-      - /home/greg/printer-data/kp3s-1/gcode:/opt/printer_data/gcodes
+      - ../data/kp3s-1/config:/opt/printer_data/config
+      - ../data/kp3s-1/moonraker-db:/opt/printer_data/database
+      - ../data/kp3s-1/run:/opt/printer_data/run
+      - ../data/kp3s-1/gcode:/opt/printer_data/gcodes
 
   klipper-kp3s-2:
     image: mkuf/klipper:v0.12.0
     privileged: true
     volumes:
       - /dev:/dev
-      - /home/greg/printer-data/kp3s-2/config:/opt/printer_data/config
-      - /home/greg/printer-data/kp3s-2/run:/opt/printer_data/run
-      - /home/greg/printer-data/kp3s-1/gcode:/opt/printer_data/gcodes
+      - ../data/kp3s-2/config:/opt/printer_data/config
+      - ../data/kp3s-2/run:/opt/printer_data/run
+      - ../data/kp3s-1/gcode:/opt/printer_data/gcodes
 
   moonraker-kp3s-2:
     image: mkuf/moonraker:latest
@@ -36,10 +36,10 @@ services:
     volumes:
       - /dev/null:/opt/klipper/config/null
       - /dev/null:/opt/klipper/docs/null
-      - /home/greg/printer-data/kp3s-2/config:/opt/printer_data/config
-      - /home/greg/printer-data/kp3s-2/moonraker-db:/opt/printer_data/database
-      - /home/greg/printer-data/kp3s-2/run:/opt/printer_data/run
-      - /home/greg/printer-data/kp3s-1/gcode:/opt/printer_data/gcodes
+      - ../data/kp3s-2/config:/opt/printer_data/config
+      - ../data/kp3s-2/moonraker-db:/opt/printer_data/database
+      - ../data/kp3s-2/run:/opt/printer_data/run
+      - ../data/kp3s-1/gcode:/opt/printer_data/gcodes
 
   fluidd:
     image: cadriel/fluidd

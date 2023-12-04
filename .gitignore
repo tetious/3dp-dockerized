@@ -1,1 +1,5 @@
 pi-backup
+**/gcode
+**/moonraker-db
+**/run
+*.bkp
